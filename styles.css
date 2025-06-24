@@ -69,6 +69,11 @@ main {
   border-radius: 0.3rem;
   overflow: hidden;
   box-shadow: 0px 10px 30px hsla(0, 0%, 0%, 0.1);
+  display: grid;
+  grid-template-areas:
+    "community"
+    "subscription"
+    "about-us";
 }
 
 .grid article {
@@ -79,31 +84,34 @@ main {
 /* ### COMMUNITY ARTICLE ### */
 
 .community {
+  grid-area: community;
   --stack-gap: 1.235rem;
   --article-bg: white;
 }
 
 .community h1 {
   color: var(--primary-cyan);
-  font-size: 1.355rem;
+  font-size: clamp(1.355rem, 1.2698rem + 0.4261vw, 1.6rem);
   font-weight: var(--fw-700);
 }
 
 .community .subtitle {
   max-width: 25ch;
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.9304rem + 0.3478vw, 1.2rem);
   font-weight: var(--fw-700);
 }
 
 .community .paragraph {
   color: var(--neutral-grayish-blue);
-  line-height: 1.6;
-  font-size: 0.575;
+  line-height: 2;
+  font-weight: var(--fw-700);
+  font-size: clamp(0.875rem, 0.8437rem + 0.1565vw, 1rem);
 }
 
 /* ### SUBSCRIPTION ARTICLE ### */
 
 .subscription {
+  grid-area: subscription;
   --article-bg: var(--primary-cyan);
 }
 
@@ -152,6 +160,7 @@ main {
 /* ### ABOUT-US ARTICLE ### */
 
 .about-us {
+  grid-area: about-us;
   --article-bg: var(--primary-cyan);
   filter: opacity(0.9);
 }
@@ -164,4 +173,45 @@ main {
 .about-us ul {
   --stack-gap: 0.4rem;
   font-size: 0.925rem;
+}
+
+/* ### MEDIA QUERIES ### */
+
+@media (min-width: 42em) {
+  .grid {
+    max-width: 680px;
+    grid-template-areas:
+      "community community"
+      "subscription about-us";
+  }
+
+  .grid article {
+    padding: 2.5rem;
+  }
+
+  .community {
+    --stack-gap: 0.915rem;
+  }
+
+  .community > * {
+    max-width: 90%;
+  }
+
+  .community .subtitle {
+    max-width: 40ch;
+  }
+
+  .community .paragraph {
+    line-height: 1.8;
+    font-weight: var(--fw-400);
+  }
+
+  .subscription {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .subscription .btn {
+    margin-top: auto;
+  }
 }
