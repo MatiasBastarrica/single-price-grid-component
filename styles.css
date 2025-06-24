@@ -30,3 +30,132 @@ a.btn {
 .grid ul {
   list-style-type: none;
 }
+
+/* ### UTILITIES ### */
+
+.text-yellow {
+  color: var(--primary-bright-yellow);
+}
+
+.text-light {
+  color: rgb(163, 224, 224);
+}
+
+.stack > * + * {
+  margin-top: var(--stack-gap, 1rem);
+}
+
+/* ### GENERAL STYLING ### */
+
+body {
+  font-family: var(--ff-karla);
+  font-weight: var(--fw-400);
+  font-size: 1rem;
+  color: var(--neutral-light-gray, white);
+  background-color: var(--neutral-light-gray);
+}
+
+main {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ### GRID ### */
+
+.grid {
+  border-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px hsla(0, 0%, 0%, 0.1);
+}
+
+.grid article {
+  padding: 1.5rem;
+  background-color: var(--article-bg, white);
+}
+
+/* ### COMMUNITY ARTICLE ### */
+
+.community {
+  --stack-gap: 1.235rem;
+  --article-bg: white;
+}
+
+.community h1 {
+  color: var(--primary-cyan);
+  font-size: 1.355rem;
+  font-weight: var(--fw-700);
+}
+
+.community .subtitle {
+  max-width: 25ch;
+  font-size: 1rem;
+  font-weight: var(--fw-700);
+}
+
+.community .paragraph {
+  color: var(--neutral-grayish-blue);
+  line-height: 1.6;
+  font-size: 0.575;
+}
+
+/* ### SUBSCRIPTION ARTICLE ### */
+
+.subscription {
+  --article-bg: var(--primary-cyan);
+}
+
+.subscription h2 {
+  font-size: 1.125rem;
+  margin-bottom: 1.2rem;
+  color: white;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  font-weight: var(--fw-700);
+}
+
+.price {
+  font-size: 2.125rem;
+  color: white;
+}
+
+.subscription .paragraph {
+  color: white;
+}
+
+.subscription .btn {
+  background-color: var(--primary-bright-yellow);
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 1.155rem;
+  margin-top: 1.8rem;
+  padding: 0.8em 1em;
+  border-radius: 0.4rem;
+  box-shadow: 0px 6px 12px hsla(0, 0%, 0%, 0.2);
+}
+
+/* ### ABOUT-US ARTICLE ### */
+
+.about-us {
+  --article-bg: var(--primary-cyan);
+  filter: opacity(0.9);
+}
+
+.about-us h2 {
+  font-size: 1.235rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-us ul {
+  --stack-gap: 0.4rem;
+  font-size: 0.925rem;
+}
